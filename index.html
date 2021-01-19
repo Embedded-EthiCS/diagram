@@ -1,0 +1,728 @@
+<html>
+<head>
+    <title>Test page</title>
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/dark.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        #chartdiv {
+            width: 100%;
+            height: 800px;
+            margin: auto;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="chartdiv"></div>
+    <script>
+        /**
+        * ---------------------------------------
+        * This demo was created using amCharts 4.
+        * 
+        * For more information visit:
+        * https://www.amcharts.com/
+        * 
+        * Documentation is available at:
+        * https://www.amcharts.com/docs/v4/
+        * ---------------------------------------
+        */
+
+        // Themes begin
+        //am4core.useTheme(am4themes_dark);
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+
+
+        var chart = am4core.create("chartdiv", am4charts.ChordDiagram);
+
+        chart.data = [
+        
+        // CS TOPICS
+        {
+            "from": "Systems",
+            "nodeColor": "#00f5f5"
+        },
+        {
+            "from": "HCI and visualization",
+            "nodeColor": "#00e6e6"
+        },
+        {
+            "from": "Programming languages",
+            "nodeColor": "#00dbdb"
+        },
+        {
+            "from": "Theory and EconCS",
+            "nodeColor": "#00cccc"
+        },
+        {
+            "from": "Machine learning and natural language processing",
+            "nodeColor": "#00bdbd"
+        },
+        {
+            "from": "Data science",
+            "nodeColor": "#00b3b3"
+        },
+        {
+            "from": "Security and privacy",
+            "nodeColor": "#00a3a3"
+        },
+
+        // PHILOSOPHY TOPICS
+        {
+            "to": "Discrimination",
+            "nodeColor": "#f50000"
+        },
+        {
+            "to": "Equality",
+            "nodeColor": "#e60000"
+        },
+        {
+            "to": "Autonomy",
+            "nodeColor": "#db0000"
+        },
+        {
+            "to": "Fairness",
+            "nodeColor": "#cc0000"
+        },
+        {
+            "to": "Rights",
+            "nodeColor": "#bd0000"
+        },
+        {
+            "to": "Responsibility",
+            "nodeColor": "#b30000"
+        },
+        
+        // MODULES
+        {
+            "to": "ASCII, Unicode, and the Ethics of Natural Language Representation",
+            "nodeColor": "#c67aff"
+        },
+        {
+            "to": "Algorithmic Fairness and Recidivism Prediction",
+            "nodeColor": "#c375ff"
+        },
+        {
+            "to": "The Ethics of Recommender Systems",
+            "nodeColor": "#bf6bff"
+        },
+        {
+            "to": "Computer Science and Climate Change",
+            "nodeColor": "#ba61ff"
+        },
+        {
+            "to": "Tracking Censorship at the (Potential) Cost of Privacy",
+            "nodeColor": "#b85cff"
+        },
+        {
+            "to": "The Ethics of Hacking Back",
+            "nodeColor": "#b452ff"
+        },
+        {
+            "to": "The Ethics and Politics of Data Visualization",
+            "nodeColor": "#af47ff"
+        },
+        {
+            "to": "Making Programming Inclusive",
+            "nodeColor": "#ad42ff"
+        },
+        {
+            "to": "Bias and Stereotypes in Word-Embedding software",
+            "nodeColor": "#a938ff"
+        },
+        {
+            "to": "Electronic Privacy",
+            "nodeColor": "#a42eff"
+        },
+        {
+            "to": "How can we design models that allocate goods and services fairly?",
+            "nodeColor": "#a229ff"
+        },
+        {
+            "to": "Privacy in networks",
+            "nodeColor": "#9e1fff"
+        },
+        {
+            "to": "The Ethics of Cloud Security",
+            "nodeColor": "#9914ff"
+        },
+        {
+            "to": "Ethics in Software Verification and Validation",
+            "nodeColor": "#970fff"
+        },
+        {
+            "to": "Ethical Tradeoffs in System Design: Performance versus Correctness",
+            "nodeColor": "#9305ff"
+        },
+        {
+            "to": "Privacy in the Design of Data Systems",
+            "nodeColor": "#8200e6"
+        },
+        {
+            "to": "Ethical Perspectives on Accessible Video Game Design",
+            "nodeColor": "#8800f0"
+        },
+        {
+            "to": "Discrimination and Machine Learning",
+            "nodeColor": "#8b00f5"
+        },
+        {
+            "to": "Robots and work",
+            "nodeColor": "#7600d1"
+        },
+        {
+            "to": "Interpretability and Explanation",
+            "nodeColor": "#7c00db"
+        },
+        {
+            "to": "Electronic Privacy and Big Data Systems",
+            "nodeColor": "#7f00e0"
+        },
+        
+        // PHILOSOPHY TOPIC <--> MODULE
+        {
+            "from": "Discrimination",
+            "to": "Discrimination and Machine Learning",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Discrimination",
+            "to": "Bias and Stereotypes in Word-Embedding software",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Discrimination",
+            "to": "The Ethics and Politics of Data Visualization",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Discrimination",
+            "to": "ASCII, Unicode, and the Ethics of Natural Language Representation",
+            value: 1,
+            nodeColor: "#222222"
+        },
+
+        {
+            "from": "Equality",
+            "to": "Making Programming Inclusive",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Equality",
+            "to": "Ethical Perspectives on Accessible Video Game Design",
+            value: 1,
+            nodeColor: "#222222"
+        },
+
+        {
+            "from": "Autonomy",
+            "to": "The Ethics of Recommender Systems",
+            value: 1,
+            nodeColor: "#222222"
+        },
+
+        {
+            "from": "Fairness",
+            "to": "Algorithmic Fairness and Recidivism Prediction",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Fairness",
+            "to": "How can we design models that allocate goods and services fairly?",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Fairness",
+            "to": "Discrimination and Machine Learning",
+            value: 1,
+            nodeColor: "#222222"
+        },
+
+        {
+            "from": "Rights",
+            "to": "Computer Science and Climate Change",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Rights",
+            "to": "Tracking Censorship at the (Potential) Cost of Privacy",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Rights",
+            "to": "The Ethics of Hacking Back",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Rights",
+            "to": "Making Programming Inclusive",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Rights",
+            "to": "Electronic Privacy",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Rights",
+            "to": "The Ethics of Cloud Security",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Rights",
+            "to": "Ethics in Software Verification and Validation",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Rights",
+            "to": "Privacy in the Design of Data Systems",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Rights",
+            "to": "Electronic Privacy and Big Data Systems",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Rights",
+            "to": "Robots and work",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Rights",
+            "to": "Interpretability and Explanation",
+            value: 1,
+            nodeColor: "#222222"
+        },
+
+        {
+            "from": "Responsibility",
+            "to": "Computer Science and Climate Change",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Responsibility",
+            "to": "The Ethics of Cloud Security",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Responsibility",
+            "to": "Ethical Tradeoffs in System Design: Performance versus Correctness",
+            value: 1,
+            nodeColor: "#222222"
+        },
+
+        //CS TOPIC <-> MODULE
+        // PHILOSOPHY TOPIC <--> MODULE
+        {
+            "from": "Systems",
+            "to": "ASCII, Unicode, and the Ethics of Natural Language Representation",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Systems",
+            "to": "Computer Science and Climate Change",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Systems",
+            "to": "Tracking Censorship at the (Potential) Cost of Privacy",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Systems",
+            "to": "The Ethics of Hacking Back",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Systems",
+            "to": "Privacy in networks",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Systems",
+            "to": "Ethical Tradeoffs in System Design: Performance versus Correctness",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Systems",
+            "to": "Privacy in the Design of Data Systems",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Systems",
+            "to": "Robots and work",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Systems",
+            "to": "Electronic Privacy and Big Data Systems",
+            value: 1,
+            nodeColor: "#222222"
+        },
+
+        {
+            "from": "HCI and visualization",
+            "to": "The Ethics and Politics of Data Visualization",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "HCI and visualization",
+            "to": "Making Programming Inclusive",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "HCI and visualization",
+            "to": "Ethical Perspectives on Accessible Video Game Design",
+            value: 1,
+            nodeColor: "#222222"
+        },
+
+        {
+            "from": "Programming languages",
+            "to": "Ethics in Software Verification and Validation",
+            value: 1,
+            nodeColor: "#222222"
+        },
+
+        {
+            "from": "Theory and EconCS",
+            "to": "Algorithmic Fairness and Recidivism Prediction",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Theory and EconCS",
+            "to": "The Ethics of Recommender Systems",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Theory and EconCS",
+            "to": "How can we design models that allocate goods and services fairly?",
+            value: 1,
+            nodeColor: "#222222"
+        },
+
+        {
+            "from": "Machine learning and natural language processing",
+            "to": "Algorithmic Fairness and Recidivism Prediction",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Machine learning and natural language processing",
+            "to": "The Ethics of Recommender Systems",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Machine learning and natural language processing",
+            "to": "Bias and Stereotypes in Word-Embedding software",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Machine learning and natural language processing",
+            "to": "Discrimination and Machine Learning",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Machine learning and natural language processing",
+            "to": "Interpretability and Explanation",
+            value: 1,
+            nodeColor: "#222222"
+        },
+
+        {
+            "from": "Data science",
+            "to": "Algorithmic Fairness and Recidivism Prediction",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Data science",
+            "to": "The Ethics of Recommender Systems",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Data science",
+            "to": "The Ethics and Politics of Data Visualization",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Data science",
+            "to": "Privacy in the Design of Data Systems",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Data science",
+            "to": "Electronic Privacy and Big Data Systems",
+            value: 1,
+            nodeColor: "#222222"
+        },
+
+        {
+            "from": "Security and privacy",
+            "to": "Tracking Censorship at the (Potential) Cost of Privacy",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Security and privacy",
+            "to": "The Ethics of Hacking Back",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Security and privacy",
+            "to": "Electronic Privacy",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Security and privacy",
+            "to": "Privacy in networks",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Security and privacy",
+            "to": "The Ethics of Cloud Security",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Security and privacy",
+            "to": "Privacy in the Design of Data Systems",
+            value: 1,
+            nodeColor: "#222222"
+        },
+        {
+            "from": "Security and privacy",
+            "to": "Electronic Privacy and Big Data Systems",
+            value: 1,
+            nodeColor: "#222222"
+        }
+        ];
+
+        chart.dataFields.fromName = "from";
+        chart.dataFields.toName = "to";
+        chart.dataFields.value = "value";
+        chart.dataFields.color = "nodeColor";
+
+        //chart.nonRibbon = true;
+
+        chart.nodePadding = 0.1;
+        chart.minNodeSize = 0.01;
+        chart.startAngle = 0;
+        chart.endAngle = chart.startAngle + 360;
+        //chart.sortBy = "value";
+        chart.fontSize = 40;
+
+        var nodeTemplate = chart.nodes.template;
+
+        nodeTemplate.width = 30;
+        nodeTemplate.strokeWidth = 1;
+        //nodeTemplate.stroke = am4core.color("#fff");
+
+        //nodeTemplate.nameLabel.locationX = 0.2;
+        //nodeTemplate.nameLabel.label.fill = am4core.color("#fff");
+        //nodeTemplate.nameLabel.label.fontWeight = "bold";
+
+        nodeTemplate.readerTitle = "Click to show/hide or drag to rearrange";
+        nodeTemplate.showSystemTooltip = true;
+
+        nodeTemplate.slice.disabled = false;
+        nodeTemplate.label.disabled = false;
+
+        nodeTemplate.clickable = true;
+        nodeTemplate.draggable = true;
+
+        // transparency in the links
+        let link = chart.links.template;
+        link.fillOpacity = 0.2;
+        link.colorMode = "gradient";
+        link.propertyFields.fill = "linkColor";
+        link.propertyFields.fillOpacity = "linkOpacity";
+
+        let label = nodeTemplate.label;
+        label.fontSize = 10;
+        label.fill = am4core.color("#555");
+        label.relativeRotation = 90;
+
+        var nodeLink = chart.links.template;
+        var bullet = nodeLink.bullets.push(new am4charts.CircleBullet());
+        bullet.fillOpacity = 0.75;
+        bullet.circle.radius = 4;
+        bullet.locationX = 1.5;
+
+        (function(){
+            var linkTemplate = chart.links.template;
+            linkTemplate.strokeOpacity = 0;
+            linkTemplate.fillOpacity = 0.15;
+            linkTemplate.tooltipText = "{fromName} --> {toName}";
+
+            var hoverState = linkTemplate.states.create("hover");
+            hoverState.properties.fillOpacity = 0.7;
+            hoverState.properties.strokeOpacity = 0.7;
+        })();
+
+        var titleImage = chart.chartContainer.createChild(am4core.Image);
+        titleImage.x = 30
+        titleImage.y = 30;
+        titleImage.width = 200;
+        titleImage.height = 50;
+
+
+
+        var hoverState = nodeLink.states.create("hover");
+        hoverState.properties.fillOpacity = 0.7;
+        hoverState.properties.strokeOpacity = 0.7;
+
+        // create animations
+        chart.events.on("ready", function() {
+        for (var i = 0; i < chart.links.length; i++) {
+            var link = chart.links.getIndex(i);
+            var bullet = link.bullets.getIndex(0);
+
+            animateBullet(bullet);
+        }
+        })
+
+        function animateBullet(bullet) {
+        var duration = 3000 * Math.random() + 3000;
+        var animation = bullet.animate([{
+            property: "locationX",
+            from: 0,
+            to: 1
+        }], duration)
+        animation.events.on("animationended", function(event) {
+            animateBullet(event.target.object);
+        })
+        }
+
+
+        nodeTemplate.showSystemTooltip = false;
+        nodeTemplate.propertyFields.fill = "color";
+        nodeTemplate.tooltipText = "{name} ({total}) ";
+
+        // when rolled over the node, make all the links rolled-over
+        nodeTemplate.events.on("over", function(event) {
+        var node = event.target;
+        node.outgoingDataItems.each(function(dataItem) {
+            if (dataItem.toNode) {
+            dataItem.link.isHover = true;
+            dataItem.toNode.label.isHover = true;
+            }
+        })
+        node.incomingDataItems.each(function(dataItem) {
+            if (dataItem.fromNode) {
+            dataItem.link.isHover = true;
+            dataItem.fromNode.label.isHover = true;
+            }
+        })
+
+        node.label.isHover = true;
+        })
+
+        // when rolled out from the node, make all the links rolled-out
+        nodeTemplate.events.on("out", function(event) {
+        var node = event.target;
+        node.outgoingDataItems.each(function(dataItem) {
+            if (dataItem.toNode) {
+            dataItem.link.isHover = false;
+            dataItem.toNode.label.isHover = false;
+            }
+        })
+        node.incomingDataItems.each(function(dataItem) {
+            if (dataItem.fromNode) {
+            dataItem.link.isHover = false;
+            dataItem.fromNode.label.isHover = false;
+            }
+        })
+
+        node.label.isHover = false;
+        })
+
+        label.fillOpacity = 1;
+        let labelHS = label.states.create("hover");
+        labelHS.properties.fillOpacity = 1;
+
+        nodeTemplate.cursorOverStyle = am4core.MouseCursorStyle.pointer;
+        // this adapter makes non-main character nodes to be filled with color of the main character which he/she kissed most
+        nodeTemplate.adapter.add("fill", function(fill, target) {
+        let node = target;
+        let counters = {};
+        let mainChar = false;
+        node.incomingDataItems.each(function(dataItem) {
+
+
+            if (isNaN(counters[dataItem.fromName])) {
+            counters[dataItem.fromName] = dataItem.value;
+            } else {
+            counters[dataItem.fromName] += dataItem.value;
+            }
+        })
+        if (mainChar) {
+            return fill;
+        }
+
+        let count = 0;
+        let color;
+        let biggest = 0;
+        let biggestName;
+
+        for (var name in counters) {
+            if (counters[name] > biggest) {
+            biggestName = name;
+            biggest = counters[name];
+            }
+        }
+
+
+        return fill;
+        })
+    </script>
+</body>
+</html>
